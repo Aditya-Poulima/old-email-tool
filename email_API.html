@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email with Gmail API</title>
+    <script>
+        function startOAuthFlow() {
+            const clientId = '562784205087-poqi1gbk5mk14bku8ncvjh3qt92j9ee3.apps.googleusercontent.com';
+            const redirectUri = 'http://localhost:3000/oauth2callback';
+            const scope = 'https://www.googleapis.com/auth/gmail.send';
+            const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&access_type=offline`;
+
+            window.location.href = oauthUrl;
+        }
+    </script>
+</head>
+<body>
+    <h2>Send Email using Gmail API</h2>
+
+    <!-- Button to trigger OAuth and send email -->
+    <button onclick="startOAuthFlow()">Authorize & Send Email</button>
+
+</body>
+</html>
